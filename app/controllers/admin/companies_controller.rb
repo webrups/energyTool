@@ -15,9 +15,10 @@ class Admin::CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    @company.admin_id = current_admin.id
 
    if @company.save
-      redirect_to action :index
+      redirect_to admin_companies_path
    else
      render action: 'new'
    end
@@ -31,7 +32,7 @@ class Admin::CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update_attributes(company_params)
-      redirect_to action: 'show', id: @company
+      redirect_to admin_company_path
     else
       render action: 'edit'
     end
@@ -39,7 +40,7 @@ class Admin::CompaniesController < ApplicationController
 
   def delete
     Company.find(params[:id]).destroy
-    redirect_to action :index
+    redirect_to admin_companies_path
   end
 
   private

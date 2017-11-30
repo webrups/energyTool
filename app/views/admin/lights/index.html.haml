@@ -1,0 +1,22 @@
+
+.row
+  .col-12
+    %h2 Lights index
+
+.row
+  .col-12
+    = link_to 'new lights', new_admin_light_path, class: 'btn btn-primary'
+.row
+  .col-4
+    = render "admin/shared/sidemenu"
+
+  .col-xs-8
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Light name
+          %td Light status
+      %tbody
+        - @rooms.each do |l|
+          %tr
+            %td= l.id

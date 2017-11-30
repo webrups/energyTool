@@ -1,0 +1,5 @@
+= form_for [:admin, @light] do |f|
+  = f.label :title
+  = f.text_field :title, class: 'form-control'
+  %br
+  = f.submit

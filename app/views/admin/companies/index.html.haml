@@ -1,16 +1,16 @@
 .row
-  .col-xs-12
+  .col-12
     %h2 companies index
 
 .row
   .col-12
-    = button_to 'new company', new_admin_company_path, class: 'btn btn-primary'
+    = link_to 'new company', new_admin_company_path, class: 'btn btn-primary'
 .row
-  .col-xs-4
+  .col-4
     = render "admin/shared/sidemenu"
 
   .col-xs-8
-    %table.table.table-condensed
+    %table.table.table-striped
       %thead
         %tr
           %th Company name
