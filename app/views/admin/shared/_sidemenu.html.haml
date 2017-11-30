@@ -1,9 +1,9 @@
 %ul.nav.flex-column
   %li.nav-item
-    %a.nav-link.active{:href => "#"} Dashboard
+    = link_to 'dashboard', admin_authenticated_path, class: "nav-link"
   %li.nav-item
-    %a.nav-link{:href => "#"} Companies
+    = link_to 'companies', admin_companies_path, class: "nav-link"
   %li.nav-item
-    %a.nav-link{:href => "#"} Spaces
+    = link_to 'rooms', admin_rooms_path, class: "nav-link"
   %li.nav-item
-    %a.nav-link.disabled{:href => "#"} Lights
+    = link_to 'lights', admin_lights_path, class: "nav-link"
