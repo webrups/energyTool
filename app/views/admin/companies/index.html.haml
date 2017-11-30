@@ -1,0 +1,24 @@
+.row
+  .col-xs-12
+    %h2 companies index
+
+.row
+  .col-12
+    = button_to 'new company', new_admin_company_path, class: 'btn btn-primary'
+.row
+  .col-xs-4
+    = render "admin/shared/sidemenu"
+
+  .col-xs-8
+    %table.table.table-condensed
+      %thead
+        %tr
+          %th Company name
+          %th Rooms
+          %th Lights
+      %tbody
+        - @companies.each do |c|
+          %tr
+            %td= c.title
+            %td
+            %td
