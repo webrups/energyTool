@@ -7,13 +7,13 @@ development:
   <<: *default
   host: localhost
   database: energy_tool_dev
-  username: <%= ENV['DB_DEV_USER'] %>
+  username: <%= ENV['DB_DEV_USERNAME'] %>
   password: <%= ENV['DB_DEV_PASSWORD'] %>
 
 
 test:
   <<: *default
-  HOST: localhost
+  host: localhost
   database: energy_tool_test
-  username: <%= ENV['DB_DEV_USER'] %>
+  username: <%= ENV['DB_DEV_USERNAME'] %>
   password: <%= ENV['DB_DEV_PASSWORD'] %>
