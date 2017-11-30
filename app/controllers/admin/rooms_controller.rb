@@ -11,6 +11,7 @@ class Admin::RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @companies = current_admin.companies.all
   end
 
   def create

@@ -2,4 +2,7 @@
   = f.label :title
   = f.text_field :title, class: 'form-control'
   %br
+  %label Select Company
+  = f.select :room_id, @rooms.collect { |r| [r.title, r.id] }, {}, class: 'form-control'
+
   = f.submit
