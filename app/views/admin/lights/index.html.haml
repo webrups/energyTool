@@ -18,4 +18,8 @@
           %th Light name
           %td Light status
       %tbody
-  
+        - @lights.each do |l|
+          %tr
+            %td= l.title
+            %td= l.status
+            
