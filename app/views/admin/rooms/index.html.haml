@@ -13,6 +13,10 @@
       %thead
         %tr
           %th Room name
+          %td Description
           %th Lights
       %tbody
-  
+        - @rooms.each do |r|
+          %tr
+            %td= r.title
+            %td= r.description
