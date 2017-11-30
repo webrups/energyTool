@@ -16,10 +16,12 @@ class Admin::LightsController < ApplicationController
 
   def create
     @light = Light.new(light_params)
+    binding.pry
 
    if @light.save
       redirect_to admin_lights_path
    else
+     @rooms = Room.all
      render action: 'new'
    end
   end

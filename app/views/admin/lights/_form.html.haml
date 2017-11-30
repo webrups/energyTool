@@ -1,8 +1,11 @@
 = form_for [:admin, @light] do |f|
   = f.label :title
   = f.text_field :title, class: 'form-control'
+
+  = f.label :status
+  = f.check_box :status
   %br
-  %label Select Company
+  %label Select room
   = f.select :room_id, @rooms.collect { |r| [r.title, r.id] }, {}, class: 'form-control'
 
   = f.submit
