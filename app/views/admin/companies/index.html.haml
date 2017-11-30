@@ -1,0 +1,23 @@
+.row
+  .col-12
+    %h2
+      = 'companies index'
+      = link_to 'new company', new_admin_company_path, class: 'btn btn-primary '
+
+.row
+  .col-4
+    = render "admin/shared/sidemenu"
+
+  .col-xs-8
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Company name
+          %th Rooms
+          %th Lights
+      %tbody
+        - @companies.each do |c|
+          %tr
+            %td= c.title
+            %td= c.rooms.size
+            %td

@@ -1,0 +1,23 @@
+.row
+  .col-12
+    %h2
+      = 'rooms index'
+      = link_to 'new room', new_admin_room_path, class: 'btn btn-primary'
+
+.row
+  .col-4
+    = render "admin/shared/sidemenu"
+
+  .col-xs-8
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Room name
+          %td Description
+          %th Lights
+      %tbody
+        - @rooms.each do |r|
+          %tr
+            %td= r.title
+            %td= r.description
+            %td= r.lights.size

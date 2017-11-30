@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   authenticated :admin do
     namespace :admin do
       root to: 'pages#dashboard', as: :authenticated
+      resources :companies
+      resources :rooms
+      resources :lights
     end
   end
 
