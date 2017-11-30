@@ -1,6 +1,6 @@
 class Api::V1::LightsController < ApplicationController
   respond_to :json
-  swagger_controller :lights, "Light Management"
+  swagger_controller :lights, "lights controller"
 
   swagger_api :index do
     summary "Fetches all Light items"
