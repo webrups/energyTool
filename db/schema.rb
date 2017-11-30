@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130100603) do
+ActiveRecord::Schema.define(version: 20171130120447) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,34 @@ ActiveRecord::Schema.define(version: 20171130100603) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_companies_on_admin_id"
+  end
+
+  create_table "companrakes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "db"
+  end
+
+  create_table "lights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "space_id"
+    t.index ["space_id"], name: "index_lights_on_space_id"
+  end
+
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_rooms_on_company_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
